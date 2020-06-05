@@ -17,7 +17,7 @@ class MovieItem extends React.Component {
                     <img className="card-img-top"
                          src={movie.backdrop_path || movie.poster_path ?
                                  `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`
-                                 : '/img/not-found.png'
+                                 : process.env.PUBLIC_URL + '/img/not_found.png'
                          }
                          alt=""
                     />
