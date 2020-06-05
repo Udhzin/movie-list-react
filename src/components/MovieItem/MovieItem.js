@@ -1,4 +1,5 @@
 import React from 'react';
+import './MovieItem.css'
 
 class MovieItem extends React.Component {
     constructor() {
@@ -46,7 +47,7 @@ class MovieItem extends React.Component {
                                     </button>)
                             }
                         </div>
-                        <button type="button" onClick={removeMovie.bind(null, movie)}>Delete movie</button>
+                        <button type="button" onClick={removeMovie.bind(null, movie)}>Delete Movie</button>
                     </div>
                 </div>
         );
