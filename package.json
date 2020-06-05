@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Udhzin.github.io/react-test",
-  "name": "react-test",
+  "homepage": "https://Udhzin.github.io/movie-list-react",
+  "name": "movie-list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
