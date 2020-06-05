@@ -15,7 +15,10 @@ class MovieItem extends React.Component {
         return (
                 <div className="card">
                     <img className="card-img-top"
-                         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`}
+                         src={movie.backdrop_path || movie.poster_path ?
+                                 `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`
+                                 : '/img/not-found.png'
+                         }
                          alt=""
                     />
                     <div className="card-body">

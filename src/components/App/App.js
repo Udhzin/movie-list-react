@@ -79,11 +79,6 @@ class App extends React.Component {
     });
   };
 
-  getPage = (currentPage) => {
-    return currentPage;
-  }
-
-
   render() {
     return (
             <div className="container p-3">

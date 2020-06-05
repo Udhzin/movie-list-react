@@ -2,6 +2,7 @@ import React from 'react';
 import './Paginagion.css'
 
 class Pagination extends React.Component {
+
     render() {
         const {page, total_pages, onChangePage} = this.props;
         const getClassName = value => {
@@ -13,6 +14,9 @@ class Pagination extends React.Component {
             console.log('value', value)
             onChangePage(value)
         };
+        const showPageNumbers = (currentPage) => {
+            console.log({currentPage});
+        }
 
         return (
                 <nav aria-label="Page navigation">
@@ -21,6 +25,7 @@ class Pagination extends React.Component {
                             <span className="page-link" onClick={handleClick(page >= 1 ? page - 1 : page)}>Previous</span>
                         </li>
 
+                        {showPageNumbers(page)}
                         <li className={getClassName(page)}>
                             <span className="page-link" onClick={handleClick(page)}>{page}</span>
                         </li>
