@@ -45,9 +45,12 @@ class App extends React.Component {
 
   removeMovie = movie => {
     const updateMovies = this.state.movies.filter(item => {return item.id !== movie.id})
+    const updateMoviesWillWatch = this.state.moviesWillWatch.filter(item => {return item.id !== movie.id})
 
     this.setState({
-      movies: updateMovies
+      movies: updateMovies,
+      moviesWillWatch: updateMoviesWillWatch
+
     });
   };
 
