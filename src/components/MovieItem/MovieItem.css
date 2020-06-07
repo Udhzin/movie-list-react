@@ -1,3 +1,24 @@
-.card-img-top {
-
+progress {
+    border: 0;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #efefef;
+}
+progress::-webkit-progress-bar {
+    border: 0;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #efefef;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #28a745;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #28a745;
 }

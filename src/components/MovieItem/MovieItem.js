@@ -23,9 +23,18 @@ class MovieItem extends React.Component {
                     />
                     <div className="card-body">
                         <h6 className="card-title">{movie.title}</h6>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-center mb-2">
                             <p className="mb-0">Rating: {movie.vote_average}</p>
-                            {this.state.willWatch ?
+                            <progress min={0} max={100} value={movie.vote_average*10} />
+                        </div>
+                        <div className="d-flex justify-content-between">
+                        <button 
+                            type="button" 
+                            className="btn btn-secondary" 
+                            onClick={removeMovie.bind(null, movie)}>
+                                Delete Movie
+                        </button>
+                        {this.state.willWatch ?
                                     (<button type="button"
                                             className="btn btn-success"
                                              onClick={() => {
@@ -50,7 +59,6 @@ class MovieItem extends React.Component {
                                     </button>)
                             }
                         </div>
-                        <button type="button" onClick={removeMovie.bind(null, movie)}>Delete Movie</button>
                     </div>
                 </div>
         );
