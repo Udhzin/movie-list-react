@@ -1,5 +1,8 @@
 import React from 'react';
-import './MovieItem.css'
+import './MovieItem.css';
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 class MovieItem extends React.Component {
     constructor() {
@@ -28,15 +31,16 @@ class MovieItem extends React.Component {
                             <progress min={0} max={100} value={movie.vote_average*10} />
                         </div>
                         <div className="d-flex justify-content-between">
-                        <button 
-                            type="button" 
-                            className="btn btn-secondary" 
+                        <button
+                            type="button"
+                            className="btn btn-secondary d-flex align-items-center"
                             onClick={removeMovie.bind(null, movie)}>
+                                <DeleteIcon fontSize="small" />
                                 Delete Movie
                         </button>
                         {this.state.willWatch ?
                                     (<button type="button"
-                                            className="btn btn-success"
+                                            className="btn btn-success d-flex align-items-center"
                                              onClick={() => {
                                                  this.setState({
                                                      willWatch: false
@@ -44,10 +48,11 @@ class MovieItem extends React.Component {
                                                  removeMovieFromWillWatch(movie)}
                                              }
                                     >
+                                        <RemoveIcon fontSize="small" />
                                         Remove Will Watch
                                     </button>) :
                                     (<button type="button"
-                                            className="btn btn-secondary"
+                                            className="btn btn-secondary d-flex align-items-center"
                                             onClick={() => {
                                                 this.setState({
                                                     willWatch: true
@@ -55,6 +60,7 @@ class MovieItem extends React.Component {
                                                 addMovieToWillWatch(movie)}
                                             }
                                     >
+                                        <AddIcon fontSize="small" />
                                         Add Will Watch
                                     </button>)
                             }
