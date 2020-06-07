@@ -86,7 +86,7 @@ class App extends React.Component {
     return (
             <div className="container p-3">
               <div className="row">
-                <div className="col-9">
+                <div className="col-12 col-md-8">
                   <div className="row mb-3">
                     <div className="col-12">
                       <MovieTabs sort_by={this.state.sort_by}
@@ -94,6 +94,15 @@ class App extends React.Component {
                       />
                     </div>
                   </div>
+                </div>
+                <div className="col-12 col-md-4">
+                  <div className="d-flex mb-3 pt-05 justify-content-end">
+                    Will Watch: {this.state.moviesWillWatch.length} Movies
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12">
                   <div className="row mb-2">
                     <div className="col-12">
                       <Pagination page={this.state.page}
@@ -104,7 +113,7 @@ class App extends React.Component {
                   <div className="row">
                     {this.state.movies.map(movie => {
                       return(
-                              <div className="col-6 mb-4" key={movie.id} >
+                              <div className="col-12 col-md-6 mb-4" key={movie.id} >
                                 <MovieItem movie={movie}
                                            removeMovie={this.removeMovie}
                                            addMovieToWillWatch={this.addMovieToWillWatch}
@@ -120,11 +129,6 @@ class App extends React.Component {
                                   onChangePage={this.onChangePage}
                       />
                     </div>
-                  </div>
-                </div>
-                <div className="col-3">
-                  <div className="row mb-3 pt-05">
-                    Will Watch: {this.state.moviesWillWatch.length} Movies
                   </div>
                 </div>
               </div>
