@@ -113,7 +113,7 @@ class App extends React.Component {
                   <div className="row">
                     {this.state.movies.map(movie => {
                       return(
-                              <div className="col-12 col-md-6 mb-4" key={movie.id} >
+                              <div className="col-12 col-md-6 col-lg-4 mb-4" key={movie.id} >
                                 <MovieItem movie={movie}
                                            removeMovie={this.removeMovie}
                                            addMovieToWillWatch={this.addMovieToWillWatch}

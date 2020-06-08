@@ -17,30 +17,32 @@ class MovieItem extends React.Component {
         const {movie, removeMovie, addMovieToWillWatch, removeMovieFromWillWatch} = this.props;
         return (
                 <div className="card">
-                    <img className="card-img-top"
-                         src={movie.backdrop_path || movie.poster_path ?
-                                 `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`
-                                 : process.env.PUBLIC_URL + '/img/not_found.png'
-                         }
-                         alt=""
-                    />
+                    <div className="card-img">
+                        <img className="card-img-top"
+                             src={movie.backdrop_path || movie.poster_path ?
+                                     `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`
+                                     : process.env.PUBLIC_URL + '/img/no-image.jpg'
+                             }
+                             alt=""
+                        />
+                    </div>
                     <div className="card-body">
                         <h6 className="card-title">{movie.title}</h6>
                         <div className="d-flex justify-content-between align-items-center mb-2">
                             <p className="mb-0">Rating: {movie.vote_average}</p>
                             <progress min={0} max={100} value={movie.vote_average*10} />
                         </div>
-                        <div className="d-flex justify-content-between">
+                        <div className="card-group d-flex justify-content-between">
                         <button
                             type="button"
-                            className="btn btn-secondary d-flex align-items-center"
+                            className="btn btn-secondary d-flex align-items-center col-12 mb-2"
                             onClick={removeMovie.bind(null, movie)}>
                                 <DeleteIcon fontSize="small" />
                                 Delete Movie
                         </button>
                         {this.state.willWatch ?
                                     (<button type="button"
-                                            className="btn btn-success d-flex align-items-center"
+                                            className="btn btn-success d-flex align-items-center col-12"
                                              onClick={() => {
                                                  this.setState({
                                                      willWatch: false
@@ -52,7 +54,7 @@ class MovieItem extends React.Component {
                                         Remove Will Watch
                                     </button>) :
                                     (<button type="button"
-                                            className="btn btn-secondary d-flex align-items-center"
+                                            className="btn btn-secondary d-flex align-items-center col-12 mb-1"
                                             onClick={() => {
                                                 this.setState({
                                                     willWatch: true

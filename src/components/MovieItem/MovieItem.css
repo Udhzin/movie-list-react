@@ -23,3 +23,13 @@ progress::-moz-progress-bar {
     border-radius: 20px;
     background-color: #28a745;
 }
+
+.card-img {
+    max-height: 195px;
+    overflow: hidden;
+}
+
+.card-group {
+    flex-wrap: wrap;
+}
+
