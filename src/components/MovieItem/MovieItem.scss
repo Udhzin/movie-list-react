@@ -1,35 +1,37 @@
+@import '../../stylesheets/variables.scss';
+
 progress {
     border: 0;
     height: 10px;
     width: calc(100% - 90px);
     border-radius: 20px;
-    background-color: #efefef;
+    background-color: $light-grey;
 }
+
 progress::-webkit-progress-bar {
     border: 0;
     height: 10px;
     border-radius: 20px;
-    background-color: #efefef;
+    background-color: $light-grey;
 }
+
 progress::-webkit-progress-value {
     border: 0;
     height: 10px;
     border-radius: 20px;
-    background-color: #28a745;
+    background-color: $green;
 }
+
 progress::-moz-progress-bar {
     border: 0;
     height: 10px;
     border-radius: 20px;
-    background-color: #28a745;
+    background-color: $green;
 }
 
-.card-img {
-    max-height: 195px;
-    overflow: hidden;
-}
-
-.card-group {
-    flex-wrap: wrap;
+.card {
+    &-group {
+        flex-wrap: wrap;
+    }
 }
 

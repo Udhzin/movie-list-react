@@ -1,6 +1,6 @@
 import React from 'react';
 //import cn from 'classnames';
-import './MovieTabs.css'
+import './MovieTabs.scss'
 
 class MovieTabs extends React.Component {
     render() {

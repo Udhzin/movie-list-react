@@ -1,5 +1,5 @@
 import React from 'react';
-import './Paginagion.css'
+import './Paginagion.scss'
 
 class Pagination extends React.Component {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { API_KEY_3, API_URL } from '../../utils/api';
 import MovieItem from '../MovieItem/MovieItem';
 import MovieTabs from '../MovieTabs/MovieTabs';
@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       moviesWillWatch: [],
-      sort_by: 'revenue.desc',
+      sort_by: 'popularity.desc',
       page: 1,
       total_pages: 500
     }

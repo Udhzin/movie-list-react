@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieItem.css';
+import './MovieItem.scss';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
@@ -20,8 +20,8 @@ class MovieItem extends React.Component {
                     <div className="card-img">
                         <img className="card-img-top"
                              src={movie.backdrop_path || movie.poster_path ?
-                                     `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`
-                                     : process.env.PUBLIC_URL + '/img/no-image.jpg'
+                                     `https://image.tmdb.org/t/p/w500${movie.poster_path || movie.backdrop_path}`
+                                     : process.env.PUBLIC_URL + '/img/no-poster.png'
                              }
                              alt=""
                         />
