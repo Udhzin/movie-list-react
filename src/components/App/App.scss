@@ -1,3 +1,9 @@
+@import '../../stylesheets/variables.scss';
+
+body {
+  font-family: $font;
+}
+
 .App {
   text-align: center;
 
