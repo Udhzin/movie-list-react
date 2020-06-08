@@ -34,7 +34,7 @@ class App extends React.Component {
   }
 
   getMovies() {
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.page}&total_pages=${this.state.total_pages}`).then((response) => {
+    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.page}&total_pages=${this.state.total_pages}&adult=true`).then((response) => {
       return response.json()
     }).then((data) => {
       this.setState({
@@ -113,7 +113,7 @@ class App extends React.Component {
                   <div className="row">
                     {this.state.movies.map(movie => {
                       return(
-                              <div className="col-12 col-md-6 col-lg-4 mb-4" key={movie.id} >
+                              <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={movie.id} >
                                 <MovieItem movie={movie}
                                            removeMovie={this.removeMovie}
                                            addMovieToWillWatch={this.addMovieToWillWatch}
