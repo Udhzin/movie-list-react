@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2562a947fd6c18f0e6b1c2a8f5e8a786",
+    "revision": "3bd33923ae15de46339b79a0e62e2ccc",
     "url": "/movie-list-react/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie-list-react/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "c39d12e71081e7794ef7",
-    "url": "/movie-list-react/static/css/main.0d610f3a.chunk.css"
+    "revision": "35769081c2f3e56c3ae7",
+    "url": "/movie-list-react/static/css/main.bb682e30.chunk.css"
   },
   {
     "revision": "a62a1d46bf5727f3ed95",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie-list-react/static/js/2.1755b6bb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c39d12e71081e7794ef7",
-    "url": "/movie-list-react/static/js/main.bfe59bda.chunk.js"
+    "revision": "35769081c2f3e56c3ae7",
+    "url": "/movie-list-react/static/js/main.79e430df.chunk.js"
   },
   {
     "revision": "1e29e052bf0418bdab5c",
