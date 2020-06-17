@@ -13,7 +13,7 @@ class App extends React.Component {
       movies: [],
       moviesWillWatch: [],
       sort_by: 'popularity.desc',
-      page: 1,
+      currentPage: 1,
       total_pages: 500
     }
   }
@@ -23,18 +23,18 @@ class App extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevState.sort_by !== this.state.sort_by || prevState.page !== this.state.page) {
+    if (prevState.sort_by !== this.state.sort_by || prevState.currentPage !== this.state.currentPage) {
       this.getMovies()
     }
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    const {sort_by, page} = nextProps;
-    return sort_by !== this.state.sort_by || page !== this.state.page;
+    const {sort_by, currentPage} = nextProps;
+    return sort_by !== this.state.sort_by || currentPage !== this.state.currentPage;
   }
 
   getMovies() {
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.page}&total_pages=${this.state.total_pages}&adult=true`).then((response) => {
+    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.currentPage}&total_pages=${this.state.total_pages}&adult=true`).then((response) => {
       return response.json()
     }).then((data) => {
       this.setState({
@@ -78,7 +78,7 @@ class App extends React.Component {
 
   onChangePage = value => {
     this.setState({
-      page: value
+      currentPage: value
     });
   };
 
@@ -105,7 +105,7 @@ class App extends React.Component {
                 <div className="col-12">
                   <div className="row mb-2">
                     <div className="col-12">
-                      <Pagination page={this.state.page}
+                      <Pagination currentPage={this.state.currentPage}
                                   onChangePage={this.onChangePage}
                       />
                     </div>
@@ -125,7 +125,8 @@ class App extends React.Component {
                   </div>
                   <div className="row">
                     <div className="col-12">
-                      <Pagination page={this.state.page}
+                      <Pagination currentPage={this.state.currentPage}
+                                  total_pages={this.state.total_pages}
                                   onChangePage={this.onChangePage}
                       />
                     </div>
