@@ -11,7 +11,7 @@ class App extends React.Component {
 
     this.state = {
       movies: [],
-      moviesWillWatch: [],
+      moviesWishlist: [],
       sort_by: 'popularity.desc',
       currentPage: 1,
       total_pages: 500
@@ -45,28 +45,28 @@ class App extends React.Component {
 
   removeMovie = movie => {
     const updateMovies = this.state.movies.filter(item => {return item.id !== movie.id})
-    const updateMoviesWillWatch = this.state.moviesWillWatch.filter(item => {return item.id !== movie.id})
+    const updateMoviesWishlist = this.state.moviesWishlist.filter(item => {return item.id !== movie.id})
 
     this.setState({
       movies: updateMovies,
-      moviesWillWatch: updateMoviesWillWatch
+      moviesWishlist: updateMoviesWishlist
 
     });
   };
 
-  addMovieToWillWatch = movie => {
-    const updateMoviesWillWatch = [...this.state.moviesWillWatch, movie];
+  addMovieFromWishlist = movie => {
+    const updateMoviesWishlist = [...this.state.moviesWishlist, movie];
 
     this.setState({
-      moviesWillWatch: updateMoviesWillWatch
+      moviesWishlist: updateMoviesWishlist
     });
   };
 
-  removeMovieFromWillWatch = movie => {
-    const updateMoviesWillWatch = this.state.moviesWillWatch.filter(item => {return item.id !== movie.id})
+  removeMovieFromWishlist = movie => {
+    const updateMoviesWishlist = this.state.moviesWishlist.filter(item => {return item.id !== movie.id})
 
     this.setState({
-      moviesWillWatch: updateMoviesWillWatch
+      moviesWishlist: updateMoviesWishlist
     });
   };
 
@@ -97,7 +97,7 @@ class App extends React.Component {
                 </div>
                 <div className="col-12 col-md-4">
                   <div className="d-flex mb-3 pt-05 justify-content-end">
-                    Will Watch: {this.state.moviesWillWatch.length} Movies
+                    Wishlist: {this.state.moviesWishlist.length} Movies
                   </div>
                 </div>
               </div>
@@ -116,8 +116,8 @@ class App extends React.Component {
                               <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={movie.id} >
                                 <MovieItem movie={movie}
                                            removeMovie={this.removeMovie}
-                                           addMovieToWillWatch={this.addMovieToWillWatch}
-                                           removeMovieFromWillWatch={this.removeMovieFromWillWatch}
+                                           addMovieFromWishlist={this.addMovieFromWishlist}
+                                           removeMovieFromWishlist={this.removeMovieFromWishlist}
                                 />
                               </div>
                       );

@@ -3,18 +3,19 @@ import './MovieItem.scss';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import {Favorite, FavoriteBorderOutlined} from '@material-ui/icons';
 
 class MovieItem extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            willWatch: false
+            watched: false
         }
     }
 
     render() {
-        const {movie, removeMovie, addMovieToWillWatch, removeMovieFromWillWatch} = this.props;
+        const {movie, removeMovie, addMovieFromWishlist, removeMovieFromWishlist} = this.props;
         return (
                 <div className="card">
                     <div className="card-img">
@@ -40,30 +41,30 @@ class MovieItem extends React.Component {
                                 <DeleteIcon fontSize="small" />
                                 Delete Movie
                         </button>
-                        {this.state.willWatch ?
+                        {this.state.watched ?
                                     (<button type="button"
                                             className="btn btn-success d-flex align-items-center col-12"
                                              onClick={() => {
                                                  this.setState({
-                                                     willWatch: false
+                                                     watched: false
                                                  });
-                                                 removeMovieFromWillWatch(movie)}
+                                                 removeMovieFromWishlist(movie)}
                                              }
                                     >
-                                        <RemoveIcon fontSize="small" />
-                                        Remove Will Watch
+                                        <FavoriteBorderOutlined fontSize="small" />
+                                         Remove from Wishlist
                                     </button>) :
                                     (<button type="button"
                                             className="btn btn-secondary d-flex align-items-center col-12 mb-1"
                                             onClick={() => {
                                                 this.setState({
-                                                    willWatch: true
+                                                    watched: true
                                                 });
-                                                addMovieToWillWatch(movie)}
+                                                addMovieFromWishlist(movie)}
                                             }
                                     >
-                                        <AddIcon fontSize="small" />
-                                        Add Will Watch
+                                        <Favorite fontSize="small" />
+                                         Add to Wishlist
                                     </button>)
                             }
                         </div>
