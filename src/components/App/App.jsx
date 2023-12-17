@@ -119,6 +119,7 @@ class App extends React.Component {
                         <div className="row mb-2">
                             <div className="col-12">
                                 <Pagination currentPage={this.state.currentPage}
+                                            total_pages={this.state.total_pages}
                                             onChangePage={this.onChangePage}
                                 />
                             </div>
